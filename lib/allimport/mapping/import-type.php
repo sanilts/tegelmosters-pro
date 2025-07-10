@@ -31,12 +31,12 @@ function importPamesaType($typeCode = null): string
 
     // Check if code is in wall-only set
     if (in_array($typeCode, $wallOnlyCodes)) {
-        return $wallOnly;
+        return cleanSentence($wallOnly);
     }
 
     // Check if code is in wall-and-floor set
     if (in_array($typeCode, $wallAndFloorCodes)) {
-        return $wallAndFloor;
+        return cleanSentence($wallAndFloor);
     }
 
     // Return error for unknown codes

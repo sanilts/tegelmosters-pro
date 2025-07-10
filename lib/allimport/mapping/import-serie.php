@@ -374,18 +374,18 @@ function getMappingValue($searchString) {
     if (preg_match('/\d+X\d+\s*\([A-Z]\)\s*(.+)/', $searchString, $matches)) {
         $productName = trim($matches[1]);
     } else {
-        $productName = $searchString;
+        $productName = cleanSentence($searchString);
     }
     
     // Direct match
     if (isset($mappings[$productName])) {
-        return $mappings[$productName];
+        return cleanSentence($mappings[$productName]);
     }
     
     // Check if any mapping key is contained within the product name
     foreach ($mappings as $key => $value) {
         if (strpos($productName, $key) !== false) {
-            return ucwords(strtolower($value));
+            return cleanSentence(ucwords(strtolower($value)));
         }
     }
     

@@ -8,7 +8,7 @@
 
 
 function import_pamesa_application($data = null) {
-    return $data;
+    return cleanSentence($data);
 }
 function import_aleluia_application($data = null) {
     

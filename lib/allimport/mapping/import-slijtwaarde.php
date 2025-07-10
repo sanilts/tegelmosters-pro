@@ -8,7 +8,7 @@
 
 
 function import_pamesa_slijtwaarde($data = null) {
-    return $data;
+    return cleanSentence($data);
 }
 function import_aleluia_slijtwaarde($data = null) {
     
